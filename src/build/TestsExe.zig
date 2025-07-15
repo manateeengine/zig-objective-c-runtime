@@ -17,10 +17,12 @@ pub fn init(b: *std.Build, config: *const BuildConfig, module: *const ZigObjecti
         .strip = false,
         .target = config.target,
     });
+
     const tests = b.addTest(.{
         .name = "tests",
         .root_module = tests_module,
     });
+    tests.linkSystemLibrary("objc");
 
     return TestsExe{
         .tests = tests,
