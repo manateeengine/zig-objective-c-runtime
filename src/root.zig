@@ -16,7 +16,7 @@ pub const Id = object.Id;
 
 pub const Imp = imp.Imp;
 
-pub const Ivar = ivar.Ivar1;
+pub const Ivar = ivar.Ivar;
 
 pub const Method = method.Method;
 
@@ -27,3 +27,12 @@ pub const Property = property.Property;
 pub const Protocol = protocol.Protocol;
 
 pub const Sel = sel.Sel;
+pub const selGetName = sel.selGetName;
+pub const selGetUid = sel.selGetUid;
+pub const selIsEqual = sel.selIsEqual;
+pub const selRegisterName = sel.selRegisterName;
+
+test {
+    _ = objc;
+    _ = sel;
+}
