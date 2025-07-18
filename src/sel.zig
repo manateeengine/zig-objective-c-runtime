@@ -65,21 +65,21 @@ extern "objc" fn sel_registerName(str: [*:0]const u8) callconv(.c) *Sel;
 
 test selGetName {
     // It should return the provided method selector's name as a u8 slice
-    const sel = selRegisterName("NSObject");
-    try std.testing.expect(std.mem.eql(u8, selGetName(sel), "NSObject"));
+    const sel = selRegisterName("alloc");
+    try std.testing.expect(std.mem.eql(u8, selGetName(sel), "alloc"));
 }
 
 test selGetUid {
     // It should register a method selector with the provided name
-    const sel = selRegisterName("NSObject");
-    try std.testing.expect(std.mem.eql(u8, selGetUid(sel), "NSObject1"));
+    const sel = selRegisterName("alloc");
+    try std.testing.expect(std.mem.eql(u8, selGetUid(sel), "alloc"));
 }
 
 test selIsEqual {
     // It should return true of the two provided method selectors are equal.
-    const sel1 = selRegisterName("NSObject");
-    const sel2 = selRegisterName("NSObject");
-    const sel3 = selRegisterName("NSString");
+    const sel1 = selRegisterName("alloc");
+    const sel2 = selRegisterName("alloc");
+    const sel3 = selRegisterName("init");
 
     try std.testing.expect(selIsEqual(sel1, sel2));
     try std.testing.expect(selIsEqual(sel1, sel3) == false);
@@ -88,6 +88,6 @@ test selIsEqual {
 
 test selRegisterName {
     // It should register a method selector with the provided name
-    const sel = selRegisterName("NSObject");
-    try std.testing.expect(std.mem.eql(u8, selGetName(sel), "NSObject"));
+    const sel = selRegisterName("alloc");
+    try std.testing.expect(std.mem.eql(u8, selGetName(sel), "alloc"));
 }
