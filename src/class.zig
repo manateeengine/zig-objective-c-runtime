@@ -2,6 +2,5 @@
 
 /// An opaque type that represents an Objective-C class.
 ///
-/// ## See
-/// https://developer.apple.com/documentation/objectivec/class
+/// @see [Objective-C Runtime Docs](https://developer.apple.com/documentation/objectivec/class)
 pub const Class = opaque {};
