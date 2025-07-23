@@ -3,5 +3,5 @@
 /// An opaque type that represents a method in a class definition.
 ///
 /// ## See
-/// https://developer.apple.com/documentation/objectivec/method?language=objc
+/// https://developer.apple.com/documentation/objectivec/method
 pub const Method = opaque {};

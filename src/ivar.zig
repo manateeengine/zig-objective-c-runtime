@@ -3,5 +3,5 @@
 /// An opaque type that represents an instance variable.
 ///
 /// ## See
-/// https://developer.apple.com/documentation/objectivec/ivar?language=objc
+/// https://developer.apple.com/documentation/objectivec/ivar
 pub const Ivar = opaque {};

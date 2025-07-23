@@ -6,5 +6,5 @@
 /// No description for this class is provided directly in the Objective-C Runtime docs.
 ///
 /// ## See
-/// https://developer.apple.com/documentation/objectivec/protocol?language=objc
+/// https://developer.apple.com/documentation/objectivec/protocol
 pub const Protocol = opaque {};

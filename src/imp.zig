@@ -6,5 +6,5 @@
 /// In the Objective-C runtime, this type is named `IMP`.
 ///
 /// ## See
-/// https://developer.apple.com/documentation/objectivec/imp?language=objc
-pub const Imp = *const fn () callconv(.C) void;
+/// https://developer.apple.com/documentation/objectivec/imp
+pub const Imp = *const fn () callconv(.c) void;

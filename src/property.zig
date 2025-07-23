@@ -6,5 +6,5 @@
 /// In the Objective-C runtime, this opaque type is named `objc_property_t`.
 ///
 /// ## See
-/// https://developer.apple.com/documentation/objectivec/objc_property_t?language=objc
+/// https://developer.apple.com/documentation/objectivec/objc_property_t
 pub const Property = opaque {};

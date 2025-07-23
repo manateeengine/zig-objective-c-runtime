@@ -7,7 +7,7 @@ const std = @import("std");
 /// Original name: `SEL`
 ///
 /// ## See
-/// https://developer.apple.com/documentation/objectivec/sel?language=objc
+/// https://developer.apple.com/documentation/objectivec/sel
 pub const Sel = opaque {};
 
 /// Returns the name of the method specified by a given selector.
@@ -18,7 +18,7 @@ pub const Sel = opaque {};
 /// This function converts the original output from a C string to a Zig string literal slice.
 ///
 /// ## See
-/// https://developer.apple.com/documentation/objectivec/sel_getname(_:)?language=objc
+/// https://developer.apple.com/documentation/objectivec/sel_getname(_:)
 pub fn selGetName(sel: *Sel) []const u8 {
     return std.mem.span(sel_getName(sel));
 }
@@ -31,7 +31,7 @@ pub fn selGetName(sel: *Sel) []const u8 {
 /// This function converts the original output from a C string to a Zig string literal slice.
 ///
 /// ## See
-/// https://developer.apple.com/documentation/objectivec/sel_getuid(_:)?language=objc
+/// https://developer.apple.com/documentation/objectivec/sel_getuid(_:)
 pub fn selGetUid(sel: *Sel) []const u8 {
     return std.mem.span(sel_getUid(sel));
 }
@@ -41,7 +41,7 @@ pub fn selGetUid(sel: *Sel) []const u8 {
 /// Original name: `sel_isEqual`
 ///
 /// ## See
-/// https://developer.apple.com/documentation/objectivec/sel_isequal(_:_:)?language=objc
+/// https://developer.apple.com/documentation/objectivec/sel_isequal(_:_:)
 pub fn selIsEqual(lhs: *Sel, rhs: *Sel) bool {
     return sel_isEqual(lhs, rhs);
 }
@@ -52,7 +52,7 @@ pub fn selIsEqual(lhs: *Sel, rhs: *Sel) bool {
 /// Original name: `sel_registerName`
 ///
 /// ## See
-/// https://developer.apple.com/documentation/objectivec/sel_registername(_:)?language=objc
+/// https://developer.apple.com/documentation/objectivec/sel_registername(_:)
 pub fn selRegisterName(str: [*:0]const u8) *Sel {
     // const str_slice = str[0..str.len+1 :0];
     return sel_registerName(str);
