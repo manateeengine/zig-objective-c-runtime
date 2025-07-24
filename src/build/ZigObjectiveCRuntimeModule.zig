@@ -15,6 +15,7 @@ pub fn init(b: *std.Build, build_config: *const BuildConfig) ZigObjectiveCRuntim
         .optimize = build_config.optimize,
         .target = build_config.target,
     });
+    module.linkSystemLibrary("objc", .{});
 
     return ZigObjectiveCRuntimeModule{
         .module = module,

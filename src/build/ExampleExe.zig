@@ -20,16 +20,19 @@ name: []const u8,
 /// "objective_c_runtime" to the newly
 /// initialized exe.
 pub fn init(b: *std.Build, build_config: *const BuildConfig, module: *const ZigObjectiveCRuntimeModule, name: []const u8) ExampleExe {
-    const examples_exe = b.addExecutable(.{
-        .name = name,
+    const example_module = b.createModule(.{
         .optimize = build_config.optimize,
         .root_source_file = b.path(b.pathJoin(&.{ "examples", name, "main.zig" })),
         .target = build_config.target,
     });
-    examples_exe.root_module.addImport("objective_c_runtime", module.module);
+    const example_exe = b.addExecutable(.{
+        .name = name,
+        .root_module = example_module,
+    });
+    example_exe.root_module.addImport("objective_c_runtime", module.module);
 
     return ExampleExe{
-        .exe = examples_exe,
+        .exe = example_exe,
         .name = name,
     };
 }
